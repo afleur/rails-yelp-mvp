@@ -1,0 +1,25 @@
+<h1><%= @restaurant.name%></h1>
+
+<ul>
+<li> 💎 <%= @restaurant.address %></li>
+<li> 🏢  <%= @restaurant.category %></li>
+<li> 📞  <%= @restaurant.phone_number %></li>
+</ul>
+
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-success"%>
+
+<br><br>
+<strong> Reviews : </strong>
+
+<ul>
+ <% @restaurant.reviews.each do |review| %>
+<li><%= review.content %> | <%= review.rating %>
+<% end %>
+</li>
+</ul>
+<br><br>
+
+<%= link_to "Back", restaurants_path, class: "btn btn-primary"%>
+
+
+

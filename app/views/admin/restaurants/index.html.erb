@@ -1,0 +1,13 @@
+<h1>Restaurants</h1>
+
+Vous êtes connecté en tant qu'administrateur 😎
+<br><br>
+<ul>
+ <% @restaurants.each do |restau| %>
+<li><%= restau.name %> | <%= restau.address %> | <%= restau.category %>
+<%= link_to "See details", admin_restaurant_path(restau), class: "btn btn-primary"%>
+
+<% end %>
+</li>
+</ul>
+

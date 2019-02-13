@@ -1,0 +1,13 @@
+<h1>Restaurants</h1><%= link_to "👻", admin_restaurants_path %>
+
+
+<ul>
+ <% @restaurants.each do |restau| %>
+<li><%= restau.name %> | <%= restau.address %> | <%= restau.category %>
+<%= link_to "See details", restaurant_path(restau), class: "btn btn-primary"%>
+<% end %>
+</li>
+</ul>
+
+<%= link_to "➕Add restaurant", new_restaurant_path, class: "btn btn-primary"%>
+

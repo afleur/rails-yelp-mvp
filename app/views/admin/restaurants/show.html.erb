@@ -1,0 +1,26 @@
+<h1><%= @restaurant.name%></h1>
+
+Vous êtes connecté en tant qu'administrateur 😎
+<br><br>
+
+<ul>
+<li> 💎 <%= @restaurant.address %></li>
+<li> 🏢  <%= @restaurant.category %></li>
+<li> 📞  <%= @restaurant.phone_number %></li>
+</ul>
+
+<br><br>
+<strong> Reviews : </strong>
+
+<ul>
+ <% @restaurant.reviews.each do |review| %>
+<li><%= review.content %> | <%= review.rating %> • <%= link_to '❌', admin_restaurant_review_path(@restaurant),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
+<% end %>
+</li>
+</ul>
+<br><br>
+
+<%= link_to "Back", admin_restaurants_path, class: "btn btn-primary"%>
+
